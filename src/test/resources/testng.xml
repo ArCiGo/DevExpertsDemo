@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Sample Tests" verbose="1" >
+    <listeners>
+        <listener class-name="Utilities.Listeners.TestListener"></listener>
+        <listener class-name="Utilities.Listeners.AnnotationTransformer"></listener>
+    </listeners>
+
+    <test name="Regression" >
+        <groups>
+            <run>
+                <include name="API" />
+                <include name="UI" />
+            </run>
+        </groups>
+        <classes>
+            <class name="Tests.APITests"></class>
+            <class name="Tests.UITests"></class>
+        </classes>
+    </test>
+</suite>
